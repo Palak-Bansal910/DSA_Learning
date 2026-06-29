@@ -12,16 +12,23 @@ int findGCD(int a, int b){
 int findLCM(int a, int b){
     return (a * b) / findGCD(a, b);
 }
+int LCM(int a, int b, int c){
+    int lcm = findLCM(a,b);
+    return findLCM(lcm, c);
+}
 int main(){
-    int num1, num2;
-    cout << "Enter two numbers: ";
-    cin >> num1 >> num2;
-    
+    int num1, num2, num3;
+    cout << "Enter three numbers: ";
+    cin >> num1 >> num2 >> num3;
+
     int gcd = findGCD(num1, num2);
     cout << "GCD of " << num1 << " and " << num2 << " is: " << gcd << endl;
     
     int lcm = findLCM(num1, num2);
     cout << "LCM of " << num1 << " and " << num2 << " is: " << lcm << endl;
+
+    int lcm3 = LCM(num1, num2, num3);
+    cout << "LCM of " << num1 << " and " << num2 << " and " << num3 << " is: " << lcm3 << endl;
 
     return 0;
 }
