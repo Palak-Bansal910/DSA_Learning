@@ -2,13 +2,12 @@
 using namespace std;
 
 int findGCD(int a, int b){
-    int gcd = 1;
-    for(int i = 1; i <= min(a,b); i++){
-        if(a % i == 0 && b % i == 0){
-            gcd = i;
-        }
+    while(b != 0){
+        int temp = b;
+        b = a % b;
+        a = temp;
     }
-    return gcd;
+    return a;
 }
 int main(){
     int num1, num2;
