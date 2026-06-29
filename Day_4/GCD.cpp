@@ -9,6 +9,10 @@ int findGCD(int a, int b){
     }
     return a;
 }
+int GCD(int a, int b, int c){
+    int gcd = findGCD(a,b);
+    return findGCD(gcd, c);
+}
 int findLCM(int a, int b){
     return (a * b) / findGCD(a, b);
 }
@@ -26,6 +30,9 @@ int main(){
     
     int lcm = findLCM(num1, num2);
     cout << "LCM of " << num1 << " and " << num2 << " is: " << lcm << endl;
+    
+    int gcd3 = GCD(num1, num2, num3);
+    cout << "GCD of " << num1 << " and " << num2 << " and " << num3 << " is: " << gcd3 << endl;
 
     int lcm3 = LCM(num1, num2, num3);
     cout << "LCM of " << num1 << " and " << num2 << " and " << num3 << " is: " << lcm3 << endl;
