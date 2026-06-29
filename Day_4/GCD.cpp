@@ -9,6 +9,9 @@ int findGCD(int a, int b){
     }
     return a;
 }
+int findLCM(int a, int b){
+    return (a * b) / findGCD(a, b);
+}
 int main(){
     int num1, num2;
     cout << "Enter two numbers: ";
@@ -17,5 +20,8 @@ int main(){
     int gcd = findGCD(num1, num2);
     cout << "GCD of " << num1 << " and " << num2 << " is: " << gcd << endl;
     
+    int lcm = findLCM(num1, num2);
+    cout << "LCM of " << num1 << " and " << num2 << " is: " << lcm << endl;
+
     return 0;
 }
