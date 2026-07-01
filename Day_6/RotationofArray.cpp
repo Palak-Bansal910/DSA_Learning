@@ -1,17 +1,21 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-int rotate(vector<int>& nums, int k) {
+void reverse(vector<int> &nums,int i, int j){
+        while(i < j){
+            int temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+            i++;
+            j--;
+        }
+    }
+void rotate(vector<int>& nums, int k) {
     int n = nums.size();
     k = k % n;
-    for(int i = 0; i < k; i++){
-        int last = nums[n -1];
-        for(int j = n -1; j > 0; j--){
-            nums[j] = nums[j -1];
-        }
-        nums[0] = last;
-    }
-    return 0;
+    reverse(nums, 0, n - 1);
+    reverse(nums, 0, k - 1);
+    reverse(nums, k, n - 1);
 }
 
 int main(){
